@@ -8,27 +8,9 @@ namespace SistemaBancario.Model
 {
     public class Conta
     {
-        public int Numero { get; set; }
-        public double Saldo { get; set; }
-        public Cliente Cliente { get; set; }
-        public Conta(int numero, double saldo, Cliente cliente)
-        {
-            Numero = numero;
-            Saldo = saldo;
-            Cliente = cliente;
-        }
-        public void Depositar(double valor)
-        {
-            Saldo += valor;
-        }
-        public void Sacar(double valor)
-        {
-            Saldo -= valor;
-        }
-        public void Transferir(double valor, Conta contaDestino)
-        {
-            Sacar(valor);
-            contaDestino.Depositar(valor);
-        }
+        //caso o valor do saque seja maior que o saldo, o método deve lançar uma exceção
+        //caso o valor do saque seja menor ou igual a zero, o método deve lançar uma exceção
+        //caso o valor do deposito seja menor ou igual a zero, o método deve lançar uma exceção
+
     }
 }

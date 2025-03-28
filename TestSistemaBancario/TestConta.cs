@@ -5,13 +5,20 @@ namespace TestSistemaBancario
     [TestClass]
     public sealed class TestConta
     {
+        //implemente o método de teste para o método Depositar
+        //implemente o método de teste para o método Sacar
+        //implemente o método de teste para o construtor
+        //implemente o método de teste para o método Transferir
+
         [TestMethod]
-        public void TestSaque()
+        public void TestDepositarComValorMenorOuIgualAZero()
         {
-            Cliente cliente = new Cliente("Fulano", "123.456.789-00");
-            Conta conta = new Conta(1, 100, cliente);
-            conta.Sacar(50);
-            Assert.AreEqual(50, conta.Saldo);
+            // Arrange
+           
+            // Act
+            
+            // Assert
+            
         }
     }
 }
