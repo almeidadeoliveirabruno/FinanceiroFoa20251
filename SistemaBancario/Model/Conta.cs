@@ -14,13 +14,14 @@ namespace SistemaBancario.Model
         public long Numero { get; private set; }
         public decimal Saldo { get; protected set; }
         public Cliente Titular { get; protected set; }
-        public Conta(decimal saldo)
+        public Conta(decimal saldo, Cliente cliente)
         {
             if (saldo < 0)
             {
                 throw new ArgumentException("O saldo inicial não pode ser negativo.");
             }
             Saldo = saldo;
+            Titular = cliente ?? throw new ArgumentNullException(nameof(cliente), "Cliente não pode ser nulo.");
         }
         public Conta(Cliente cliente)
         {
@@ -29,9 +30,10 @@ namespace SistemaBancario.Model
                 throw new ArgumentNullException(nameof(cliente), "Cliente não pode ser nulo.");
             }
             Titular = cliente;
+            Saldo = 10;
         }
 
-        public void Depositar(decimal valor)
+        public virtual void Depositar(decimal valor)
         {
             if (valor <= 0)
             {

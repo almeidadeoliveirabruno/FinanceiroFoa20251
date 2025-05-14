@@ -9,7 +9,8 @@ namespace SistemaBancario.Model
     public class ContaEspecial : Conta
     {
         public decimal Limite { get; private set; }
-        public ContaEspecial(decimal saldo) : base(saldo)
+
+        public ContaEspecial(decimal saldo, Cliente cliente) : base(saldo, cliente)
         {
         }
 
@@ -17,7 +18,7 @@ namespace SistemaBancario.Model
         {
         }
 
-        public ContaEspecial(decimal saldo, decimal limite) : base(saldo)
+        public ContaEspecial(decimal saldo, decimal limite, Cliente cliente) : base(saldo,cliente)
         {
             if (limite < 0)
             {
